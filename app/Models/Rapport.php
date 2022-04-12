@@ -10,7 +10,7 @@ use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 class Rapport extends Eloquent
 {
     protected $connection = 'mongodb';
-    protected $collection = 'Rapports';
+    protected $collection = 'Rapport';
     
     protected $fillable = [
         'Contenu', 'Page','Utilisateur'

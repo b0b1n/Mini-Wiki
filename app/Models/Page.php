@@ -10,7 +10,7 @@ use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 class Page extends Eloquent
 {
     protected $connection = 'mongodb';
-    protected $collection = 'pages';
+    protected $collection = 'Page';
     
     protected $fillable = [
         'Titre', 'Description','Rating', 'Sommaire', 'Thématique', 'Média'

@@ -10,7 +10,7 @@ use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 class Thematique extends Eloquent
 {
     protected $connection = 'mongodb';
-    protected $collection = 'Thematiques';
+    protected $collection = 'Thematique';
     
     protected $fillable = [
         'NomThematique', 'Sous-thematiqes','Color'

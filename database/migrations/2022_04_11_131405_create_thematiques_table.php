@@ -4,19 +4,20 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Rapport extends Migration
+return new class extends Migration
 {
-    /**
+  /**
      * Run the migrations.
      *
      * @return void
      */
     public function up()
     {
-        //
-        Schema::create('Rapport', function ($collection) {
+        
+        Schema::create('Thematique', function ($collection) {
             
         });
+        //
     }
 
     /**
@@ -26,6 +27,6 @@ class Rapport extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Rapports');
+        Schema::dropIfExists('Thematiques');
     }
-}
+};

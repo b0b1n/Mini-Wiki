@@ -11,10 +11,10 @@ use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 class Utilisateur extends Eloquent
 {
     protected $connection = 'mongodb';
-    protected $collection = 'Utilisateurs';
+    protected $collection = 'Utilisateur';
     
     protected $fillable = [
-        'username', 'e-mail','Mot de pass', 'EstConnecté', 'estAdmin', 'Date','Consultations'
+        'username', 'e-mail','password', 'EstConnecté', 'estAdmin', 'Date','Consultations'
     ];
     use HasFactory;
 }

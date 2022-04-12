@@ -4,20 +4,18 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Thematique extends Migration
+return new class extends Migration
 {
-    /**
+   /**
      * Run the migrations.
      *
      * @return void
      */
     public function up()
     {
-        
-        Schema::create('Thematique', function ($collection) {
+        Schema::create('Page', function ($collection) {
             
         });
-        //
     }
 
     /**
@@ -27,6 +25,6 @@ class Thematique extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Thematiques');
+        Schema::dropIfExists('Pages');
     }
-}
+};
