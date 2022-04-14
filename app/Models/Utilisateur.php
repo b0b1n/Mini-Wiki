@@ -14,7 +14,7 @@ class Utilisateur extends Eloquent
     protected $collection = 'Utilisateur';
     
     protected $fillable = [
-        'username', 'e-mail','password', 'EstConnecté', 'estAdmin', 'Date','Consultations'
+        'username', 'e-mail','Password', 'EstConnecté', 'estAdmin', 'Date','Consultations'
     ];
     use HasFactory;
 }
