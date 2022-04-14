@@ -21,6 +21,7 @@ class PageController extends Controller
 
        $page->Titre = $request->get('Titre');
        $page->Description = $request->get('Description');
+       $page->Rating = $request->get('Sommaire');
        $page->Rating = $request->get('Rating');
 
        $page->save();
