@@ -25,4 +25,6 @@ Route::get("login/{email}/{password}",[UserController::class,'login']);
 Route::put("session/{email}",[UserController::class,'session']);
 Route::get("users",[UserController::class,'indexall']);
 Route::post("register",[UserController::class,'register']);
+Route::get("user/{email}",[UserController::class,'user']);
+Route::put("rewatch/{email}",[UserController::class,'correct']);
 //Route::post('/user/register', [UserController::class, 'register']);

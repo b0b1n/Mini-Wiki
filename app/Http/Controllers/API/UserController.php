@@ -76,7 +76,6 @@ class UserController extends BaseController
     
     }
 
-
     /////////////////////////////LOGIN//////////////////////////
     public function login(Request $request){
         $validator =
@@ -118,7 +117,22 @@ public function session(Request $request){
     $user = Utilisateur::where('email', '=', $request->email)
     ->update(['Date'=>$request->Date,'EstConnecté'=> $request->EstConnecté]);
     
-    
+    ////////////////////////Test for user ////////////////////////
+  
+    }
+    public function user(Request $request){
+        
+        $user= Utilisateur::where([
+            'email' =>$request->email,       
+            ])->get();
+           
+            return $user;
+        }
+    public function correct(Request $request){
+        $user = Utilisateur::where('email', '=', $request->email)
+    ->update(['password'=>$request->password]);
 
-}
+    
+    }
+    
 }
