@@ -8,7 +8,10 @@ use App\Models\Thematique;
 class ThematiqueController extends Controller
 {
     
-
+public function index(){
+    $thematiques=Thematique::all();
+    return $thematiques;
+}
 
     // public function fetch(Request $request){
 

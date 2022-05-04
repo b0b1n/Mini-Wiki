@@ -23,6 +23,7 @@ Route::get('/', function () {
 
 Route::get('/pages',[PageController::class,'index']);
 Route::get('/search',[PageController::class,'fetch']);
+Route::get('/thematiques',[ThematiqueController::class,'index']);
 
 // Route::get('/search',[ThematiqueController::class,'fetch']);
 
