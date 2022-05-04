@@ -19,7 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::resource('pages', PageController::class)->only([
-    'show'
+    'show','update'
 ]);
 
 
