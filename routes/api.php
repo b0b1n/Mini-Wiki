@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\UtilisateurController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -22,4 +23,9 @@ Route::resource('pages', PageController::class)->only([
     'show','update','store'
 ]);
 
-
+Route::get("login/{email}/{password}",[UtilisateurController::class,'login']);
+Route::put("session/{email}",[UtilisateurController::class,'session']);
+Route::get("users",[UtilisateurController::class,'indexall']);
+Route::post("register",[UtilisateurController::class,'register']);
+Route::get("user/{email}",[UtilisateurController::class,'user']);
+Route::put("rewatch/{email}",[UtilisateurController::class,'correct']);
