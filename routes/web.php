@@ -21,4 +21,4 @@ Route::get('/', function () {
 
 //Route::get('accueil','PageController@show');
 
-Route::get('accueil','HomeController@accueil');
+Route::get('/accueil','HomeController@accueil');
