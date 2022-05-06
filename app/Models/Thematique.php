@@ -11,7 +11,7 @@ class Thematique extends Eloquent
 {
     protected $connection = 'mongodb';
     protected $collection = 'Thematique';
-    
+
     protected $fillable = [
         'NomThematique', 'SousThematiqes','Color'
     ];
