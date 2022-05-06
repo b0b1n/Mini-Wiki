@@ -12,7 +12,7 @@ use PharIo\Manifest\Email;
 
 class UtilisateurController extends Controller
 {
-   
+
     //////////////////////////GET////////////////////
     /*public function indexall()
     {
@@ -37,19 +37,19 @@ class UtilisateurController extends Controller
      //$input = $request->all();
      $validator =
      Validator::make($request->all(),
- [   
-     
+ [
+
      'username'=>'required|max:10',
      'password'=>'required',
      'email'=>'required|email|max:255',
-     
+
  ]
  );
 
  //auth()->attempt($request->only('email','password'));
- 
+
  //return redirect()->route('dashbord');
- 
+
  if($validator->fails()){
 
  return response()->json($validator->errors());
@@ -58,11 +58,11 @@ class UtilisateurController extends Controller
              'email',$request->email
          )->first();
          //dd($users);
-         
+
          //dd($users[0]->email);
           if(empty($users)){
              Utilisateur::create([
-          
+
                  'username' =>$request->username,
                  'email' =>$request->email,
                  'password' =>$request->password,
@@ -73,18 +73,18 @@ class UtilisateurController extends Controller
              dd("Stop !");
      }
      }
-    
- 
+
+
  }
 
  /////////////////////////////LOGIN//////////////////////////
  public function login(Request $request){
      $validator =
      Validator::make($request->all(),
- [      
+ [
      'email'=>'email',
      'password'=>'',
-     
+
  ]);
 
  //dd($validator);
@@ -95,20 +95,20 @@ class UtilisateurController extends Controller
  ->where('password', '=', $request->password)
  ->get();
  //dd($users);
- 
+
  if(empty($users[0])){
      return null;
 
- }else{   
-    
+ }else{
+
      return Utilisateur::where([
          'email' =>$request->email,
-         'password' =>$request->password,       
+         'password' =>$request->password,
          ])->get();
-    
-   
-     }  
-         
+
+
+     }
+
  }
 }
 public function session(Request $request){
@@ -117,22 +117,38 @@ public function session(Request $request){
 
  $user = Utilisateur::where('email', '=', $request->email)
  ->update(['Date'=>$request->Date,'EstConnecté'=> $request->EstConnecté]);
- 
+
  ////////////////////////Test for user ////////////////////////
 
  }
  public function user(Request $request){
-     
+
      $user= Utilisateur::where([
-         'email' =>$request->email,       
+         'email' =>$request->email,
          ])->get();
-        
+
          return $user;
      }
  public function correct(Request $request){
      $user = Utilisateur::where('email', '=', $request->email)
  ->update(['password'=>$request->password]);
 
- 
+
  }
+ function search($name)
+        {
+
+            $usernames = Utilisateur::where('username', 'LIKE', '%'. $name. '%')->get();
+
+            if(count($usernames)){
+        return  Response()->json($usernames);
+
+            }
+            else
+            {
+            return response()->json(['Result' => 'No Data  found'], 404);
+            }
+
+
+        }
 }
