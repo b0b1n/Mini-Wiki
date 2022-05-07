@@ -71,6 +71,14 @@ class ThematiqueController extends Controller
     {
         return Thematique::all();
     }
+    public function Suzie(Request $request)
+    {
+        $them = Thematique::where([
+            'SousThematique' => $request->them,
+        ])->get();
+
+        return $them;
+    }
     function search($name)
     {
 
