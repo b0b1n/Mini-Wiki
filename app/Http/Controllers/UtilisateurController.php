@@ -39,7 +39,7 @@ class UtilisateurController extends Controller
      Validator::make($request->all(),
  [   
      
-     'username'=>'required|max:10',
+     'username'=>'required|max:255',
      'password'=>'required',
      'email'=>'required|email|max:255',
      
