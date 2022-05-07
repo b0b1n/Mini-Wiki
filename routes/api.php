@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\ThematiqueController;
 use App\Http\Controllers\UtilisateurController;
 use App\Http\Controllers\ThematiqueController;
 /*
@@ -34,3 +35,10 @@ Route::get("them/{them}",[ThematiqueController::class,'them']);
 Route::get("suzie/{them}",[ThematiqueController::class,'Suzie']);
 Route::get("them",[ThematiqueController::class,'themall']);
 Route::put("rewatch/{email}",[UtilisateurController::class,'correct']);
+Route::get('searchpg/{page}', 'PageController@search');
+Route::get('articles/{createur}','PageController@getarticle');
+Route::get('searchth/{Thematique}', 'ThematiqueController@search');
+Route::get('searchut/{username}', 'UtilisateurController@search');
+Route::get("them",[ThematiqueController::class,'themall']);
+Route::get("them/{them}",[ThematiqueController::class,'them']);
+

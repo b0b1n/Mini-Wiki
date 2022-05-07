@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Validator;
 
 class ThematiqueController extends Controller
 {
+
     public function add(Request $request)
     {
           //$input = $request->all();
@@ -57,25 +58,28 @@ class ThematiqueController extends Controller
      }
     
     }
-    public function them(Request $request){
-     
-        $them= Thematique::where([
-            'NomThematique' =>$request->them,       
-            ])->get();
-           
-            return $them;
+
+    public function them(Request $request)
+    {
+            $them = Thematique::where([
+            'NomThematique' => $request->them,
+        ])->get();
+
+        return $them;
+    }
+    public function themall(Request $request)
+    {
+        return Thematique::all();
+    }
+    function search($name)
+    {
+
+        $thematiques = Thematique::where('NomThematique', 'LIKE', '%' . $name . '%')->get();
+
+        if (count($thematiques)) {
+            return  Response()->json($thematiques);
+        } else {
+            return response()->json(['Result' => 'No Data  found'], 404);
         }
-        public function themall(Request $request){
-     
-            
-                return Thematique::all();
-            }
-            public function Suzie(Request $request){
-     
-                $them= Thematique::where([
-                    'SousThematique' =>$request->them,       
-                    ])->get();
-                   
-                    return $them;
-                }
+    }
 }
