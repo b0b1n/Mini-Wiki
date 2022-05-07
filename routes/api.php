@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ThematiqueController;
 use App\Http\Controllers\UtilisateurController;
+use App\Http\Controllers\ThematiqueController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -28,7 +29,11 @@ Route::get("login/{email}/{password}",[UtilisateurController::class,'login']);
 Route::put("session/{email}",[UtilisateurController::class,'session']);
 Route::get("users",[UtilisateurController::class,'indexall']);
 Route::post("register",[UtilisateurController::class,'register']);
+Route::post("add",[ThematiqueController::class,'add']);
 Route::get("user/{email}",[UtilisateurController::class,'user']);
+Route::get("them/{them}",[ThematiqueController::class,'them']);
+Route::get("suzie/{them}",[ThematiqueController::class,'Suzie']);
+Route::get("them",[ThematiqueController::class,'themall']);
 Route::put("rewatch/{email}",[UtilisateurController::class,'correct']);
 Route::get('searchpg/{page}', 'PageController@search');
 Route::get('articles/{createur}','PageController@getarticle');
