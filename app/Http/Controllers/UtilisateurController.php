@@ -135,20 +135,5 @@ public function session(Request $request){
 
 
  }
- function search($name)
-        {
-
-            $usernames = Utilisateur::where('username', 'LIKE', '%'. $name. '%')->get();
-
-            if(count($usernames)){
-        return  Response()->json($usernames);
-
-            }
-            else
-            {
-            return response()->json(['Result' => 'No Data  found'], 404);
-            }
-
-
-        }
+ //
 }

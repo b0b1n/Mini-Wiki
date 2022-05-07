@@ -52,6 +52,8 @@ namespace App\Http\Controllers;
             $pages = Page::where('Titre', 'LIKE', '%'. $name. '%')
             ->orWhere('Contenu', 'like', '%'. $name. '%')
             ->orWhere('Description', 'like', '%'. $name. '%')
+            ->orWhere('Thematique','like', '%'. $name. '%')
+            ->orWhere('Createur','like', '%'. $name. '%')
             ->get();
 
             if(count($pages)){
@@ -64,4 +66,17 @@ namespace App\Http\Controllers;
 
 
         }
-    }
+
+            function getarticle($id){
+                if (Utilisateur::where('_id', $id)->exists()) {
+                    $page = Page::where('Createur', $id)->get()->toJson(JSON_PRETTY_PRINT);
+                    return response($page, 200);
+                } else {
+                    return response()->json([
+                    "message" => "Articles not found"
+                    ], 404);
+                }
+            }
+
+        }
+
