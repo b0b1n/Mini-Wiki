@@ -30,5 +30,4 @@ Route::post("register",[UtilisateurController::class,'register']);
 Route::get("user/{email}",[UtilisateurController::class,'user']);
 Route::put("rewatch/{email}",[UtilisateurController::class,'correct']);
 Route::get('searchpg/{page}', 'PageController@search');
-Route::get('searchth/{Thematique}', 'ThematiqueController@search');
-Route::get('searchut/{username}', 'UtilisateurController@search');
+Route::get('articles/{createur}','PageController@getarticle');
