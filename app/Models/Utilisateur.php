@@ -12,9 +12,9 @@ class Utilisateur extends Eloquent
 {
     protected $connection = 'mongodb';
     protected $collection = 'Utilisateur';
-    
+
     protected $fillable = [
-        'username', 'email','password', 'EstConnecté', 'estAdmin', 'Date','Consultations'
+        'username', 'email','password', 'EstConnecté', 'estAdmin', 'Date'
     ];
     use HasFactory;
 }
