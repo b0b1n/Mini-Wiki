@@ -47,7 +47,7 @@ namespace App\Http\Controllers;
             return $page;
         }
 
-        function search($name)
+       public function search($name)
         {
             $pages = Page::where('Titre', 'LIKE', '%'. $name. '%')
             ->orWhere('Contenu', 'like', '%'. $name. '%')
@@ -67,7 +67,7 @@ namespace App\Http\Controllers;
 
         }
 
-            function getarticle($id){
+           public function getarticle($id){
                 if (Utilisateur::where('_id', $id)->exists()) {
                     $page = Page::where('Createur', $id)->get()->toJson(JSON_PRETTY_PRINT);
                     return response($page, 200);

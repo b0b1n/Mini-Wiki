@@ -44,4 +44,4 @@ Route::get('searchth/{Thematique}', 'ThematiqueController@search');
 Route::get('searchut/{username}', 'UtilisateurController@search');
 Route::get("them",[ThematiqueController::class,'themall']);
 Route::get("them/{them}",[ThematiqueController::class,'them']);
-
+Route::get('getuser', 'UtilisateurController@getuser');

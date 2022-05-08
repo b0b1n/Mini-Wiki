@@ -132,7 +132,9 @@ public function session(Request $request){
  public function correct(Request $request){
      $user = Utilisateur::where('email', '=', $request->email)
  ->update(['password'=>$request->password]);
+ }
 
-
+ public function getuser(){
+    return Utilisateur::all();
  }
 }
