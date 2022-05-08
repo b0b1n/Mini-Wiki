@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ThematiqueController;
 use App\Http\Controllers\UtilisateurController;
-
+use App\Http\Controllers\RapportController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -30,6 +30,9 @@ Route::put("session/{email}",[UtilisateurController::class,'session']);
 Route::get("users",[UtilisateurController::class,'indexall']);
 Route::post("register",[UtilisateurController::class,'register']);
 Route::post("add",[ThematiqueController::class,'add']);
+Route::post("rapp",[RapportController::class,'rapp']);
+Route::get("all",[RapportController::class,'repall']);
+Route::get("rapp/{Utilisateur}/{Page}",[RapportController::class,'rappt']);
 Route::get("user/{email}",[UtilisateurController::class,'user']);
 Route::get("them/{them}",[ThematiqueController::class,'them']);
 Route::get("suzie/{them}",[ThematiqueController::class,'Suzie']);
